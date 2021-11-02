@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "26b89dfb-7f47-45dd-a4c5-5b6be2e8ff5f",
+		"name": "Req User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/*console.info(\"Testing info message in console\")",
+							"console.info(pm.response)",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.response ",
+							" ",
+							"console.info(pm.response); ",
+							"console.info(pm.response.json()); ",
+							"responseBody ",
+							"",
+							"console.info(responseBody); ",
+							"responseCode ",
+							" ",
+							"console.info(responseCode);    //{...name, code...} ",
+							"console.info(responseCode.code);  // 200 ",
+							"",
+							"",
+							"pm.test(\"id should be less than 10\", function(){ ",
+							"var jsonData =pm.response.json(); ",
+							"pm.expect(jsonData.data.id).to.lt(10) ",
+							"}); */"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{hostname}}/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//tests[\"name of the test\"] = true ",
+							"//tests[\"name of the another test\"] = false "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{hostname}}/api/users/{{id}}",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"krishna\",\n    \"job\": \"manager\"\n}"
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/users",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"krishna\",\n    \"job\": \"manager\"\n}"
+				},
+				"url": {
+					"raw": "https://{{hostname}}/api/users",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://{{hostname}}/api/users/2",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Uname",
+			"value": "krishna"
+		},
+		{
+			"key": "Rishi",
+			"value": ""
+		}
+	]
+}
